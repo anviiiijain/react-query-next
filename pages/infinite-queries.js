@@ -6,7 +6,7 @@ const fetchColors = ({ pageParam = 1 }) => {
   return request({ url: `colors?_limit=2&_page=${pageParam}` });
 };
 
-export const InfiniteQueriesPage = () => {
+export default function InfiniteQueries() {
   const {
     isLoading,
     isError,
@@ -57,8 +57,4 @@ export const InfiniteQueriesPage = () => {
       <div>{isFetching && !isFetchingNextPage ? "Fetching..." : null}</div>
     </>
   );
-};
-
-export default function InfiniteQueries() {
-  return <div>InfiniteQueries</div>;
 }

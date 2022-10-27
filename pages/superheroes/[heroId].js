@@ -6,6 +6,7 @@ export default function Superhero() {
   const { heroId } = router.query;
   const { isLoading, data, isError, error } = useSuperHeroData(heroId);
 
+  console.log({ heroId });
   if (isLoading) {
     return <h2>Loading...</h2>;
   }
@@ -15,7 +16,7 @@ export default function Superhero() {
   }
   return (
     <div>
-      {data.data.name} - {data.data.alterEgo}
+      {data?.data?.name} - {data?.data?.alterEgo}
     </div>
   );
 }

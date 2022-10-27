@@ -2,7 +2,7 @@ import { useState } from "react";
 import {
   useAddSuperHeroData,
   useSuperHeroesData,
-} from "../../hooks/useSuperHeroesData";
+} from "../../hooks/useSuperHerosData";
 import Link from "next/link";
 
 export default function SuperHeros() {
@@ -54,10 +54,11 @@ export default function SuperHeros() {
         <button onClick={handleAddHeroClick}>Add Hero</button>
       </div>
       <button onClick={refetch}>Fetch heroes</button>
-      {data?.data.map((hero) => {
+      {data?.data?.map((hero) => {
+        console.log({ hero });
         return (
           <div key={hero.id}>
-            <Link to={`/superheroes/${hero.id}`}>
+            <Link href={`/superheroes/${hero.id}`}>
               {hero.id} {hero.name}
             </Link>
           </div>

@@ -1,5 +1,4 @@
 import { useQuery } from "react-query";
-import axios from "axios";
 import { request } from "../utils/axios-utils";
 
 const fetchUserByEmail = (email) => {
@@ -19,5 +18,5 @@ export default function DependentQueries() {
   useQuery(["courses", channelId], () => fetchCoursesByChannelId(channelId), {
     enabled: !!channelId,
   });
-  return <div>DependentQueries</div>;
+  return <div>{channelId}</div>;
 }

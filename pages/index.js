@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Image from "next/image";
 import { dehydrate, QueryClient, useQuery } from "react-query";
 const getSpaceXData = async () =>
